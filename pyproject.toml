@@ -14,5 +14,5 @@ dependencies = [
 ]
 
 [[tool.uv.index]]
-url = "https://artifacts.devops.vasl/repository/pypi/simple"
+url = "${UV_INDEX_URL}"
 default = true

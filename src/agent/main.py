@@ -1,10 +1,11 @@
+import os
+import json
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 import openai
-import os
-import json
 
 # MODEL_NAME = "google/gemma-4-26b-a4b-it:free"
 MODEL_NAME =  "openai/gpt-oss-20b:free"
@@ -107,18 +108,4 @@ async def query_agent(request: QueryRequest) -> QueryResponse:
             print(f"[DEBUG] Final LLM response: {final_response}")
 
             return QueryResponse(response=final_response.choices[0].message.content)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

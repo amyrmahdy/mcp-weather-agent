@@ -43,3 +43,6 @@ mlartifacts/
 .DS_Store
 Thumbs.db
 EOF
+
+# UV
+uv.lock

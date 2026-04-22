@@ -27,7 +27,7 @@ async def list_tools() -> list[Tool]:
 async def call_tool(name: str, arguments: dict) -> list[TextContent]:
     if name == "get_current_weather":
         city = arguments["city"]
-        async with httpx.AsyncClient() as client:
+        async with httpx.AsyncClient(timeout=60.0) as client:
             response = await client.get(f"https://wttr.in/{city}?format=j1")
             current_condition = response.json()["current_condition"][0]
             temperature = current_condition["temp_C"]
